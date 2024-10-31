@@ -11,7 +11,10 @@ dp = Dispatcher(bot)
 # Создаем клавиатуру с кнопками для выбора категории
 def get_main_keyboard():
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
-    keyboard.add(KeyboardButton("Погода"), KeyboardButton("Новости"), KeyboardButton("Шутка"))
+    # keyboard.add(KeyboardButton("Погода"), KeyboardButton("Новости"), KeyboardButton("Шутка"))
+    keyboard.row(KeyboardButton("Погода"), KeyboardButton("Шутка"))
+    keyboard.row(KeyboardButton("Новости"))
+    # keyboard.row(KeyboardButton("Шутка"))
     return keyboard
 
 

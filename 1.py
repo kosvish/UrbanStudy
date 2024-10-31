@@ -1,8 +1,9 @@
 from aiogram import Bot, Dispatcher, types
-from aiogram.utils import executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from config import API_TOKEN
+
+# redis -> кэшируемая БД
 
 bot = Bot(token=API_TOKEN)
 storage = MemoryStorage()
@@ -16,4 +17,5 @@ async def send_welcome(message: types.Message):
 
 if __name__ == '__main__':
     from aiogram import executor
+
     executor.start_polling(dp, skip_updates=True)

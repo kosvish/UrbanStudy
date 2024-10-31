@@ -11,7 +11,6 @@ bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
 dp.middleware.setup(LoggingMiddleware())
 
-
 # Определение состояний
 class Form(StatesGroup):
     name = State()  # Состояние для имени
@@ -30,6 +29,7 @@ async def start(message: types.Message):
 async def process_name(message: types.Message, state: FSMContext):
     await state.update_data(name=message.text)  # Сохраняем имя
     await Form.next()  # Переход к следующему состоянию
+    # await Form.age.set()
     await message.reply("Сколько тебе лет?")
 
 

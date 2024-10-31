@@ -10,6 +10,9 @@ storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
 
+
+
+
 # Хендлер для команды /start
 @dp.message_handler(commands=['start'])
 async def start_command(message: types.Message):
@@ -17,7 +20,7 @@ async def start_command(message: types.Message):
 
 
 # Хендлер для сообщения "Urban"
-@dp.message_handler(lambda message: message.text == "Urban")
+@dp.message_handler(lambda message: message.text.lower() == "urban")
 async def urban_message(message: types.Message):
     print('Best University')
 
