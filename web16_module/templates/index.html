@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome to the Library</h1>
+<form action="/books/" method="post">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required><br>
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" required><br>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" step="0.01" required><br>
+    <input type="submit" value="Add Book">
+    <button type="submit">
+        Отправить
+    </button>
+</form>
+<ul>
+    {% for book_id, book in books.items() %}
+    <li><a href="{{ url_for('current-book', book_id=book_id) }}">{{ book.title }}</a> by {{ book.author }} - ${{ book.price }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
