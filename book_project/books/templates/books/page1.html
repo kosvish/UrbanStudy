@@ -1,0 +1,9 @@
+{% extends 'books/base.html' %}
+
+{% block title %}Страница 1{% endblock %}
+
+{% block content %}
+<h1>Страница 1</h1>
+<p>Информация о странице 1.</p>
+<a href="{% url 'index' %}">Главная страница</a>
+{% endblock %}

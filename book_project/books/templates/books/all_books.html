@@ -1,0 +1,22 @@
+{% extends 'books/base.html' %}
+
+{% block title %}
+ВСЕ КНИГИ
+{% endblock %}
+
+{% block content %}
+{% if books123 %}
+    {% for book in books123 %}
+    <h1 style="color: red; font-style: italic">
+        {{ book.title }}
+    </h1>
+    {% endfor %}
+{% else %}
+<h1>КНИГ В БИБЛЕОТЕКЕ СЕЙЧАС НЕТУ :(</h1>
+{% endif %}
+
+{% endblock %}
+
+{% block podval %}
+ПОДВАЛ
+{% endblock %}

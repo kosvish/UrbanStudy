@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block title %}
+        Мой сайт
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <header>
+        <h1>Мой сайт о книгах</h1>
+        <nav>
+            <a href="{% url 'index' %}">Главная</a>
+            <a href="{% url 'page1' %}">Страница 1</a>
+            <a href="{% url 'page2' %}">Страница 2</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    <footer>
+        {% block podval %}
+        <p>&copy; 2023 Мой сайт о книгах</p>
+        {% endblock %}
+    </footer>
+</body>
+</html>
